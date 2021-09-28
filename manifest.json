@@ -10,5 +10,11 @@
   },
   "options_page": "options.html",
   "permissions": ["contextMenus", "tabs"],
-  "host_permissions": ["<all_urls>"]
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "/images/LCS16.png",
+    "32": "/images/LCS32.png",
+    "48": "/images/LCS48.png",
+    "128": "/images/LCS128.png"
+  }
 }

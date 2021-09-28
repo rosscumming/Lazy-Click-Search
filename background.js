@@ -1,13 +1,14 @@
 import { contextMenus } from './helpers/contextMenu.js';
 import { searchYoutube } from './helpers/searchYoutube.js';
+import { searchReddit } from './helpers/searchReddit.js';
 
 chrome.runtime.onInstalled.addListener(() => {
   try {
     contextMenus();
-    console.log('onInstalled runtime successful');
   } catch (error) {
-    console.error('error yo wtf');
+    throw error;
   }
 });
 
 chrome.contextMenus.onClicked.addListener(searchYoutube);
+chrome.contextMenus.onClicked.addListener(searchReddit);
