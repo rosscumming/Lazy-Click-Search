@@ -1,16 +1,16 @@
-const youtube = {
-  id: "searchMenuIdYt'",
+export const youtube = {
+  id: 'searchMenuIdYt',
   title: "Search YouTube for '%s'",
   contexts: ['selection'],
 };
 
-const reddit = {
-  id: "searchMenuIdReddit'",
+export const reddit = {
+  id: 'searchMenuIdReddit',
   title: "Search Reddit for '%s'",
   contexts: ['selection'],
 };
 
-export const contextMenus = () => {
+export const createContextMenus = () => {
   chrome.contextMenus.create(youtube);
   chrome.contextMenus.create(reddit);
 };
