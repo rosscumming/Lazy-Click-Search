@@ -10,7 +10,7 @@ chrome.runtime.onInstalled.addListener(() => {
   }
 });
 
-chrome.contextMenus.onClicked.addListener(async (info, tab) => {
+chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (youtube.id === info.menuItemId) {
     searchYoutube(info);
   }
