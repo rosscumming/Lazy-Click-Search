@@ -1,0 +1,14 @@
+{
+  "name": "Lazy Click Search",
+  "description": "An easy way to search your favourite websites",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Go on, click me!",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["contextMenus"],
+  "host_permissions": ["<all_urls>"]
+}
