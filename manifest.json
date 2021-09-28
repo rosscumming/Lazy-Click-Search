@@ -9,6 +9,6 @@
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
-  "permissions": ["contextMenus"],
+  "permissions": ["contextMenus", "tabs"],
   "host_permissions": ["<all_urls>"]
 }
