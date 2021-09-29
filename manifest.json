@@ -3,7 +3,10 @@
   "description": "An easy way to search your favourite websites",
   "version": "1.0",
   "manifest_version": 3,
-  "background": { "service_worker": "background.js", "type": "module" },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "action": {
     "default_title": "Go on, click me!",
     "default_popup": "popup.html"
@@ -12,9 +15,9 @@
   "permissions": ["contextMenus", "tabs"],
   "host_permissions": ["<all_urls>"],
   "icons": {
-    "16": "/images/LCS16.png",
-    "32": "/images/LCS32.png",
-    "48": "/images/LCS48.png",
-    "128": "/images/LCS128.png"
+    "16": "/images/16.png",
+    "32": "/images/32.png",
+    "48": "/images/48.png",
+    "128": "/images/128.png"
   }
 }
