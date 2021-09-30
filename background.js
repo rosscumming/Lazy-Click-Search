@@ -1,6 +1,6 @@
 import { createContextMenus, youtube, reddit } from './helpers/contextMenu.js';
 import { searchYoutube } from './helpers/searchYoutube.js';
-import { searchReddit } from './helpers/searchReddit.js';
+import { searchReddit, searchOldReddit } from './helpers/searchReddit.js';
 
 chrome.runtime.onInstalled.addListener(() => {
   try {

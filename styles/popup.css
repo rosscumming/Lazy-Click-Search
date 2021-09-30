@@ -1,0 +1,40 @@
+header {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-title {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.2rem;
+  font-size: 0.5rem;
+}
+
+main {
+  padding: 1em 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.options-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.option {
+  display: inherit;
+  flex-direction: inherit;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.option > p {
+  margin: 0;
+  font-size: 0.9rem;
+}
