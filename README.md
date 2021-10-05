@@ -6,7 +6,7 @@ A Chrome Extension to quickly search YouTube, Reddit, and Amazon(UK). Simply rig
 
 More functionality and quality of life changes to be added.
 
-- [ ] Allow option to search old.reddit instead.
+- [x] Allow option to search old.reddit instead.
 - [ ] Allow option for user to add additional "Search by Google" parameters e.g Strict match search by default
 - [ ] Create an options page, there is none currently.
 - [ ] Flesh out Popup.html for easier user interaction.
