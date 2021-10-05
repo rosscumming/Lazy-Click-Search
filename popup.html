@@ -13,15 +13,16 @@
       <p class="sub-title">CLICK, CLICK, DONE.</p>
     </header>
     <main>
-      <div class="options-container">
+      <form id="optionsContainer">
         <div class="option">
           <p>Search with old Reddit</p>
-          <label class="switch">
-            <input type="checkbox" />
+          <label class="switch" for="oldReddit">
+            <input type="checkbox" name="oldReddit" id="oldReddit" />
             <span class="slider round"></span>
           </label>
         </div>
-      </div>
+      </form>
     </main>
+    <script src="popup.js" type="module"></script>
   </body>
 </html>
