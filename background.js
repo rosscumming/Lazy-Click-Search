@@ -16,13 +16,18 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   }
 
   if (reddit.id === info.menuItemId) {
-    searchReddit(info);
+    chrome.storage.sync.get(['OPTIONS'], result => {
+      if (result.OPTIONS.oldReddit === true) {
+        searchOldReddit(info);
+      } else {
+        searchReddit(info);
+      }
+    });
   }
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'sync' && changes.OPTIONS?.newValue) {
-    const oldReddit = Boolean(changes.OPTIONS.newValue.oldReddit);
-    console.log('use oldReddit?', oldReddit);
+    Boolean(changes.OPTIONS.newValue.oldReddit);
   }
 });
