@@ -10,7 +10,14 @@ export const reddit = {
   contexts: ['selection'],
 };
 
+export const amazonUK = {
+  id: 'searchMenuIdAmazonUK',
+  title: "Search Amazon for '%s'",
+  contexts: ['selection'],
+};
+
 export const createContextMenus = () => {
   chrome.contextMenus.create(youtube);
   chrome.contextMenus.create(reddit);
+  chrome.contextMenus.create(amazonUK);
 };

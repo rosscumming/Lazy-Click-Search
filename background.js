@@ -1,6 +1,12 @@
-import { createContextMenus, youtube, reddit } from './helpers/contextMenu.js';
+import {
+  createContextMenus,
+  youtube,
+  reddit,
+  amazonUK,
+} from './helpers/contextMenu.js';
 import { searchYoutube } from './helpers/searchYoutube.js';
 import { searchReddit, searchOldReddit } from './helpers/searchReddit.js';
+import { searchAmazonUK } from './helpers/searchAmazon.js';
 
 chrome.runtime.onInstalled.addListener(() => {
   try {
@@ -23,6 +29,10 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         searchReddit(info);
       }
     });
+  }
+
+  if (amazonUK.id === info.menuItemId) {
+    searchAmazonUK(info);
   }
 });
 
