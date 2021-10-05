@@ -23,7 +23,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
   if (reddit.id === info.menuItemId) {
     chrome.storage.sync.get(['OPTIONS'], result => {
-      if (result.OPTIONS.oldReddit === true) {
+      if (result.OPTIONS.oldReddit) {
         searchOldReddit(info);
       } else {
         searchReddit(info);
@@ -33,7 +33,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
   if (amazonUK.id === info.menuItemId) {
     chrome.storage.sync.get(['OPTIONS'], result => {
-      if (result.OPTIONS.amazonUS === true) {
+      if (result.OPTIONS.amazonUS) {
         searchAmazonUS(info);
       } else {
         searchAmazonUK(info);
