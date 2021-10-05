@@ -1,11 +1,11 @@
-export const options = {};
+import { OPTIONS } from './helpers/settings.js';
 
-chrome.storage.sync.get('options', data => {
-  Object.assign(options, data.options);
-  optionsContainer.oldReddit.checked = Boolean(options.oldReddit);
+chrome.storage.sync.get('OPTIONS', data => {
+  Object.assign(OPTIONS, data.OPTIONS);
+  optionsForm.oldReddit.checked = Boolean(OPTIONS.oldReddit);
 });
 
-optionsContainer.oldReddit.addEventListener('change', event => {
-  options.oldReddit = event.target.checked;
-  chrome.storage.sync.set({ options });
+optionsForm.oldReddit.addEventListener('change', event => {
+  OPTIONS.oldReddit = event.target.checked;
+  chrome.storage.sync.set({ OPTIONS });
 });

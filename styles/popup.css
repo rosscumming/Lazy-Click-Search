@@ -20,7 +20,7 @@ h1 {
   margin: 0;
 }
 
-#optionsContainer {
+#optionsForm {
   width: 100%;
   display: flex;
   flex-direction: row;

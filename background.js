@@ -1,7 +1,6 @@
 import { createContextMenus, youtube, reddit } from './helpers/contextMenu.js';
 import { searchYoutube } from './helpers/searchYoutube.js';
 import { searchReddit, searchOldReddit } from './helpers/searchReddit.js';
-import { options } from './popup.js';
 
 chrome.runtime.onInstalled.addListener(() => {
   try {
@@ -15,7 +14,15 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (youtube.id === info.menuItemId) {
     searchYoutube(info);
   }
+
   if (reddit.id === info.menuItemId) {
     searchReddit(info);
+  }
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && changes.OPTIONS?.newValue) {
+    const oldReddit = Boolean(changes.OPTIONS.newValue.oldReddit);
+    console.log('use oldReddit?', oldReddit);
   }
 });
