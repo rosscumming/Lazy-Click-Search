@@ -1,6 +1,6 @@
 # Lazy-Click-Search (WIP)
 
-A Chrome Extension to quickly search YouTube, Reddit, and Amazon(UK). Simply right click on the desired text and select your chosen platform to search.
+A Chrome Extension to quickly search YouTube, Reddit(old.reddit or new!), and Amazon(UK & US). Simply right click on the desired text and select your chosen platform to search.
 
 ## TODO
 
@@ -11,4 +11,4 @@ More functionality and quality of life changes to be added.
 - [ ] Create an options page, there is none currently.
 - [ ] Flesh out Popup.html for easier user interaction.
 
-![Gif of scraper in action](images/LCSintro.gif)
+![Gif extension in practice](images/LCSintro.gif)
