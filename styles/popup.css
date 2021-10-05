@@ -23,15 +23,15 @@ h1 {
 #optionsForm {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .option {
   display: inherit;
-  flex-direction: inherit;
+  flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  padding: 0 1em;
+  padding: 1em 1em;
 }
 
 .option > p {

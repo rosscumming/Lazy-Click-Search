@@ -6,7 +6,7 @@ import {
 } from './helpers/contextMenu.js';
 import { searchYoutube } from './helpers/searchYoutube.js';
 import { searchReddit, searchOldReddit } from './helpers/searchReddit.js';
-import { searchAmazonUK } from './helpers/searchAmazon.js';
+import { searchAmazonUK, searchAmazonUS } from './helpers/searchAmazon.js';
 
 chrome.runtime.onInstalled.addListener(() => {
   try {
@@ -32,12 +32,19 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   }
 
   if (amazonUK.id === info.menuItemId) {
-    searchAmazonUK(info);
+    chrome.storage.sync.get(['OPTIONS'], result => {
+      if (result.OPTIONS.amazonUS === true) {
+        searchAmazonUS(info);
+      } else {
+        searchAmazonUK(info);
+      }
+    });
   }
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'sync' && changes.OPTIONS?.newValue) {
     Boolean(changes.OPTIONS.newValue.oldReddit);
+    Boolean(changes.OPTIONS.newValue.amazonUS);
   }
 });
