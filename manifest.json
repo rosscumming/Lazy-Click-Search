@@ -11,7 +11,7 @@
     "default_title": "Go on, click me!",
     "default_popup": "popup.html"
   },
-  "permissions": ["contextMenus", "tabs", "storage"],
+  "permissions": ["contextMenus", "storage"],
   "icons": {
     "16": "/images/16.png",
     "32": "/images/32.png",
