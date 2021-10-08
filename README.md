@@ -1,18 +1,29 @@
 # Lazy-Click-Search (WIP)
 
-A Chrome Extension to quickly search YouTube, Reddit(old.reddit or new!), and Amazon(UK & US). Simply right click on the desired text and select your chosen platform to search.
+Lazy Click Search is an extension that provides users with a much simpler and efficient way to search a selected word/phrase on a webpage across other popular websites, such as Amazon, Reddit, and Youtube.
 
-See a demo of this extension in action! 
+Simply right click on the word/phrase, select Lazy Click Search from the drop down and lastly, click your chosen platform to search. Click, Click, Done.
 
-https://www.youtube.com/watch?v=1Ll5mA7s-q4
+Available for download via Google Chrome Store [here](https://chrome.google.com/webstore/detail/lazy-click-search/cjiijliopkpbjokkgdikfoiceakggabn)
 
-## TODO
 
-More functionality and quality of life changes to be added.
+**CURRENTLY AVAILABLE FEATURES**
 
-- [x] Allow option to search old.reddit instead.
-- [ ] Allow option for user to add additional "Search by Google" parameters e.g Strict match search by default
-- [ ] Create an options page, there is none currently.
-- [ ] Flesh out Popup.html for easier user interaction.
+  - Search selected text/phrase on YouTube.
+  - Search selected text/phrase on Reddit.
+  - Search selected text/phrase on Amazon.co.uk.
+  - Settings are automatically synced across different devices if signed in with your google account!
 
+SETTINGS: 
+  - Change default search to use old.reddit.
+  - Change default search to Amazon.com. More country specific Amazon options coming soon.
+
+This extension is currently in development with more features constantly being added. 
+
+Spotted a bug/encountered a problem with the extension? please reach out to me and i'll do my best to rectify this as soon as possible.
+
+Extension Author: Ross Cumming. <br>
+Website: https://www.rosscumming.codes/. <br>
+GitHub: https://github.com/rosscumming. <br>
+LinkedIn: https://www.linkedin.com/in/ross-cumming/
 
