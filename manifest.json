@@ -1,7 +1,7 @@
 {
   "name": "Lazy Click Search",
   "description": "An easy way to search your favourite websites",
-  "version": "1.0",
+  "version": "1.01",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js",
