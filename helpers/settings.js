@@ -1,3 +1,1 @@
-export const OPTIONS = {
-  oldReddit: false,
-};
+export const OPTIONS = {};
