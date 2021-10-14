@@ -16,8 +16,15 @@ export const amazonUK = {
   contexts: ['selection'],
 };
 
+export const stackOverflow = {
+  id: 'searchMenuIdStackOverflow',
+  title: "Search StackOverflow for '%s'",
+  contexts: ['selection'],
+};
+
 export const createContextMenus = () => {
   chrome.contextMenus.create(youtube);
   chrome.contextMenus.create(reddit);
   chrome.contextMenus.create(amazonUK);
+  chrome.contextMenus.create(stackOverflow);
 };

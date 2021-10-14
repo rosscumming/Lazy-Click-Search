@@ -1,12 +1,13 @@
-import { youtube, reddit, amazonUK } from './contextMenu.js';
-import { searchYoutube } from './searchYoutube.js';
-import { searchReddit, searchOldReddit } from './searchReddit.js';
-import { searchAmazonUK, searchAmazonUS } from './searchAmazon.js';
+import { youtube, reddit, amazonUK, stackOverflow } from './contextMenu.js';
+import { searchYoutube } from './sites/searchYoutube.js';
+import { searchReddit, searchOldReddit } from './sites/searchReddit.js';
+import { searchAmazonUK, searchAmazonUS } from './sites/searchAmazon.js';
+import { searchStackOverflow } from './sites/searchStackOverflow.js';
 
 export const contextMenuChecks = info => {
-  if (youtube.id === info.menuItemId) {
-    searchYoutube(info);
-  }
+  if (youtube.id === info.menuItemId) searchYoutube(info);
+
+  if (stackOverflow.id === info.menuItemId) searchStackOverflow(info);
 
   if (reddit.id === info.menuItemId) {
     chrome.storage.sync.get('OPTIONS', result => {
