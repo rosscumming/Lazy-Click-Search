@@ -19,6 +19,12 @@ main {
 h1 {
   margin: 0;
 }
+.separator {
+  border: 0;
+  height: 2px;
+  margin-bottom: 2px;
+  background-image: linear-gradient(to right, transparent, #ccc, transparent);
+}
 
 #optionsForm {
   width: 100%;
@@ -37,4 +43,48 @@ h1 {
 .option > p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+#contextMenuForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.6em 0 0 0;
+}
+
+.title-container {
+  padding-bottom: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.form-title {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.menu-option-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  width: 100%;
+}
+
+.menu-option > img {
+  padding-top: 7px;
+  cursor: pointer;
+}
+
+.menu-option > input {
+  cursor: pointer;
+}
+
+.menu-option {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
