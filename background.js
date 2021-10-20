@@ -21,7 +21,3 @@ chrome.storage.onChanged.addListener((changes, area) => {
     Boolean(changes.OPTIONS.DEFAULT_SETTINGS.newValue.amazonUS);
   }
 });
-
-chrome.storage.sync.get(['OPTIONS'], result => {
-  console.log(result);
-});
