@@ -16,8 +16,12 @@ chrome.contextMenus.onClicked.addListener(info => {
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === 'sync' && changes.OPTIONS?.newValue) {
-    Boolean(changes.OPTIONS.newValue.oldReddit);
-    Boolean(changes.OPTIONS.newValue.amazonUS);
+  if (area === 'sync' && changes.OPTIONS?.DEFAULT_SETTINGS?.newValue) {
+    Boolean(changes.OPTIONS.DEFAULT_SETTINGS.newValue.oldReddit);
+    Boolean(changes.OPTIONS.DEFAULT_SETTINGS.newValue.amazonUS);
   }
+});
+
+chrome.storage.sync.get(['OPTIONS'], result => {
+  console.log(result);
 });
