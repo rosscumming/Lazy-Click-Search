@@ -11,13 +11,17 @@ export const contextMenuChecks = info => {
 
   if (reddit.id === info.menuItemId) {
     chrome.storage.sync.get('OPTIONS', result => {
-      result.OPTIONS.oldReddit ? searchOldReddit(info) : searchReddit(info);
+      result.OPTIONS.DEFAULT_SETTINGS.oldReddit
+        ? searchOldReddit(info)
+        : searchReddit(info);
     });
   }
 
   if (amazonUK.id === info.menuItemId) {
     chrome.storage.sync.get('OPTIONS', result => {
-      result.OPTIONS.amazonUS ? searchAmazonUS(info) : searchAmazonUK(info);
+      result.OPTIONS.DEFAULT_SETTINGS.amazonUS
+        ? searchAmazonUS(info)
+        : searchAmazonUK(info);
     });
   }
 };
