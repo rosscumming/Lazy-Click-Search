@@ -64,12 +64,14 @@ h1 {
 .form-title {
   font-size: 0.8rem;
   text-align: center;
+  margin: 0;
+  padding: 7px;
 }
 
 .menu-option-container {
   display: flex;
   justify-content: space-evenly;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
   width: 100%;
 }
 

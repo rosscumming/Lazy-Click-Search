@@ -11,8 +11,12 @@ export const onInstallDefaultOptions = () => {
         enableYoutube: true,
         enableReddit: true,
         enableAmazon: true,
-        enableStackoverlow: true,
+        enableStackOverlow: true,
       },
     },
   });
+};
+
+export const checkSelectedMenuOptions = () => {
+  console.log(OPTIONS);
 };
