@@ -16,7 +16,3 @@ export const onInstallDefaultOptions = () => {
     },
   });
 };
-
-export const checkSelectedMenuOptions = () => {
-  console.log(OPTIONS);
-};
