@@ -11,12 +11,27 @@ Available for download via Google Chrome Store [here](https://chrome.google.com/
 - Search selected text/phrase on YouTube.
 - Search selected text/phrase on Reddit.
 - Search selected text/phrase on Amazon.co.uk.
+- Search selected text/phrase on StackOverflow.
 - Settings are automatically synced across different devices if signed in with your google account!
 
 SETTINGS:
 
 - Change default search to use old.reddit.
 - Change default search to Amazon.com. More country specific Amazon options coming soon.
+
+CHANGE LOG:
+
+v1.1.0:
+    - Users now have the ability to toggle which websites they wish to display in the menu.
+    - Improved UI/UX within popup menu for toggling sites.
+    - Minor code improvements.
+
+
+v1.0.1:
+    - fixed a bug which caused menu items to become unresponsive on install.
+
+v1.0.0:
+    - App launched onto Chrome store
 
 This extension is currently in development with more features constantly being added.
 
