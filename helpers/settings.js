@@ -16,3 +16,9 @@ export const onInstallDefaultOptions = () => {
     },
   });
 };
+
+export const setMenuItemVisibility = (siteId, bool) => {
+  chrome.contextMenus.update(`${siteId}`, {
+    visible: bool,
+  });
+};
