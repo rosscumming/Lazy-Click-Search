@@ -1,59 +1,56 @@
 import { OPTIONS } from './helpers/settings.js';
 import { setMenuItemVisibility } from './helpers/settings.js';
+import { sites } from './sites.js';
 
 chrome.storage.sync.get('OPTIONS', data => {
   Object.assign(OPTIONS, data.OPTIONS);
-  contextMenuForm.contextReddit.checked = Boolean(
-    OPTIONS.CONTEXT_MENU.enableReddit
-  );
-  contextMenuForm.contextYoutube.checked = Boolean(
-    OPTIONS.CONTEXT_MENU.enableYoutube
-  );
-  contextMenuForm.contextAmazon.checked = Boolean(
-    OPTIONS.CONTEXT_MENU.enableAmazon
-  );
-  contextMenuForm.contextStackOverflow.checked = Boolean(
-    OPTIONS.CONTEXT_MENU.enableStackOverlow
-  );
+
+  sites.forEach(site => {
+    contextMenuForm[`context${site.name}`].checked = Boolean(
+      OPTIONS.CONTEXT_MENU[`enable${site.name}`]
+    );
+  });
 
   optionsForm.oldReddit.checked = Boolean(OPTIONS.DEFAULT_SETTINGS.oldReddit);
   optionsForm.amazonUS.checked = Boolean(OPTIONS.DEFAULT_SETTINGS.amazonUS);
 });
 
-contextMenuForm.contextReddit.addEventListener('change', event => {
-  OPTIONS.CONTEXT_MENU.enableReddit = event.target.checked;
-  chrome.storage.sync.set({ OPTIONS });
+const menuOptionContainer = document.querySelector('.menu-option-container');
+const options = sites.forEach(site => {
+  const icon = document.createElement('img');
+  icon.src = site.icon;
+  icon.alt = site.name;
 
-  OPTIONS.CONTEXT_MENU.enableReddit
-    ? setMenuItemVisibility('searchMenuIdReddit', true)
-    : setMenuItemVisibility('searchMenuIdReddit', false);
-});
+  const input = document.createElement('input');
+  input.id = `context${site.name}`;
+  input.name = `context${site.name}`;
+  input.type = 'checkbox';
 
-contextMenuForm.contextYoutube.addEventListener('change', event => {
-  OPTIONS.CONTEXT_MENU.enableYoutube = event.target.checked;
-  chrome.storage.sync.set({ OPTIONS });
+  input.addEventListener('change', event => {
+    OPTIONS.CONTEXT_MENU[`enable${site.name}`] = event.target.checked;
+    chrome.storage.sync.set({ OPTIONS });
 
-  OPTIONS.CONTEXT_MENU.enableYoutube
-    ? setMenuItemVisibility('searchMenuIdYt', true)
-    : setMenuItemVisibility('searchMenuIdYt', false);
-});
+    OPTIONS.CONTEXT_MENU[`enable${site.name}`]
+      ? setMenuItemVisibility(site.id, true)
+      : setMenuItemVisibility(site.id, false);
+  });
 
-contextMenuForm.contextAmazon.addEventListener('change', event => {
-  OPTIONS.CONTEXT_MENU.enableAmazon = event.target.checked;
-  chrome.storage.sync.set({ OPTIONS });
+  const menuOption = document.createElement('div');
+  menuOption.classList.add('menu-option');
 
-  OPTIONS.CONTEXT_MENU.enableAmazon
-    ? setMenuItemVisibility('searchMenuIdAmazonUK', true)
-    : setMenuItemVisibility('searchMenuIdAmazonUK', false);
-});
+  const label = document.createElement('label');
+  label.for = `context${site.name}`;
 
-contextMenuForm.contextStackOverflow.addEventListener('change', event => {
-  OPTIONS.CONTEXT_MENU.enableStackOverlow = event.target.checked;
-  chrome.storage.sync.set({ OPTIONS });
+  const labelText = document.createElement('span');
+  labelText.innerText = site.name;
 
-  OPTIONS.CONTEXT_MENU.enableStackOverlow
-    ? setMenuItemVisibility('searchMenuIdStackOverflow', true)
-    : setMenuItemVisibility('searchMenuIdStackOverflow', false);
+  menuOption.appendChild(input);
+  menuOption.appendChild(icon);
+
+  label.appendChild(menuOption);
+  label.appendChild(labelText);
+
+  menuOptionContainer.appendChild(label);
 });
 
 optionsForm.oldReddit.addEventListener('change', event => {

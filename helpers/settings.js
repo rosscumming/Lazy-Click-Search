@@ -1,6 +1,6 @@
 export const OPTIONS = {};
 
-export const onInstallDefaultOptions = () => {
+export const onInstallDefaultOptions = sites => {
   chrome.storage.sync.set({
     OPTIONS: {
       DEFAULT_SETTINGS: {
@@ -8,10 +8,13 @@ export const onInstallDefaultOptions = () => {
         amazonUS: false,
       },
       CONTEXT_MENU: {
-        enableYoutube: true,
-        enableReddit: true,
-        enableAmazon: true,
-        enableStackOverlow: true,
+        ...sites.reduce((acc, site) => {
+          const key = `enable${site.name}`;
+          return {
+            ...acc,
+            [key]: true,
+          };
+        }, {}),
       },
     },
   });

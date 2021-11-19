@@ -1,30 +1,9 @@
-export const youtube = {
-  id: 'searchMenuIdYt',
-  title: "Search YouTube for '%s'",
-  contexts: ['selection'],
-};
-
-export const reddit = {
-  id: 'searchMenuIdReddit',
-  title: "Search Reddit for '%s'",
-  contexts: ['selection'],
-};
-
-export const amazonUK = {
-  id: 'searchMenuIdAmazonUK',
-  title: "Search Amazon for '%s'",
-  contexts: ['selection'],
-};
-
-export const stackOverflow = {
-  id: 'searchMenuIdStackOverflow',
-  title: "Search StackOverflow for '%s'",
-  contexts: ['selection'],
-};
-
-export const createContextMenus = () => {
-  chrome.contextMenus.create(youtube);
-  chrome.contextMenus.create(reddit);
-  chrome.contextMenus.create(amazonUK);
-  chrome.contextMenus.create(stackOverflow);
+export const createContextMenus = sites => {
+  sites.forEach(site =>
+    chrome.contextMenus.create({
+      id: site.id,
+      title: `Search ${site.name} for '%s'`,
+      contexts: ['selection'],
+    })
+  );
 };
